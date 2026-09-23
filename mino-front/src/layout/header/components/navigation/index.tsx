@@ -1,16 +1,21 @@
 "use client"
 
-import { MENU } from "./constants/menu";
 import { usePathname } from "next/navigation";
 import { CustomLink } from "@/src/components/custom-link";
+import { MenuItem } from "@/types/menu-item";
+import { FC } from "react";
 
-export const TopNavigation = () => {
+type Props = {
+  menu: MenuItem[];
+}
+
+export const TopNavigation: FC<Props> = ({ menu }) => {
   const pathname = usePathname();
 
   return (
     <nav>
       <ul className="flex gap-7 text-taupe-400">
-        {MENU.map(item => (
+        {menu.map(item => (
           <li
             key={item.url}
           >

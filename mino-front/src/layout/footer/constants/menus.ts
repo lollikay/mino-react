@@ -1,32 +1,38 @@
+import { Dictionary } from "@/src/dictionaries";
 import { EmailIcon } from "@/src/icons/email";
 import { HouseIcon } from "@/src/icons/house";
 import { PhoneIcon } from "@/src/icons/phone";
-import { MenuItem } from "@/types/menu-item";
+import { IconProps } from "@/types/icon-props";
+import { KeyedMenuItem } from "@/types/menu-item";
+import { FC } from "react";
 
-export const CATALOG_MENU: MenuItem[] = [
-  { url: "/category", title: "Каталог" },
-  { url: "/category/gitary-i-gitarnoe-oborudovanie", title: "Гитары" },
-  { url: "/category/udarnye", title: "Ударные" },
-  { url: "/category/zvukovoe-oborudovanie", title: "Звуковое оборудование" },
-  { url: "/category/svetovoe-oborudovanie", title: "Световое оборудование" },
-  { url: "/category/v-podarok-muzykantu", title: "В подарок музыканту" },
-  { url: "/category/muzykalnye-instrumenty-i-oborudovanie-dlya-muzykalnyh-shkol", title: "Инструменты и аксессуары для музыкальных школ" },
+export const CATALOG_MENU: KeyedMenuItem<keyof Dictionary["footer"]["catalog"]>[] = [
+  { url: "/category", titleKey: "title" },
+  { url: "/category/gitary-i-gitarnoe-oborudovanie", titleKey: "guitars" },
+  { url: "/category/udarnye", titleKey: "drums" },
+  { url: "/category/zvukovoe-oborudovanie", titleKey: "sound" },
+  { url: "/category/svetovoe-oborudovanie", titleKey: "light" },
+  { url: "/category/v-podarok-muzykantu", titleKey: "gifts" },
+  { url: "/category/muzykalnye-instrumenty-i-oborudovanie-dlya-muzykalnyh-shkol", titleKey: "schools" },
 ];
 
-export const ORDER_MENU: MenuItem[] = [
-  { url: "/order", title: "Как сделать заказ?" },
-  { url: "/dostavka-i-oplata", title: "Оплата" },
-  { url: "/dostavka-i-oplata#delivery", title: "Доставка" },
+export const ORDER_MENU: KeyedMenuItem<keyof Dictionary["footer"]["order"]>[] = [
+  { url: "/order", titleKey: "title" },
+  { url: "/dostavka-i-oplata", titleKey: "payment" },
+  { url: "/dostavka-i-oplata#delivery", titleKey: "delivery" },
 ];
 
-export const ABOUT_MENU: MenuItem[] = [
-  { url: "/about", title: "Об интернет-магазине Минотавр" },
-  { url: "/news", title: "Новости" },
-  { url: "/contact", title: "Контакты" },
+export const ABOUT_MENU: KeyedMenuItem<keyof Dictionary["footer"]["about"]>[] = [
+  { url: "/about", titleKey: "title" },
+  { url: "/news", titleKey: "news" },
+  { url: "/contact", titleKey: "contact" },
 ];
 
-export const ABOUT_CONTACTS = [
-  { icon: HouseIcon, text: "г. Челябинск, ул. Энгельса, 39 (позвоните перед посещением)" },
-  { icon: PhoneIcon, text: "+7 902 861 49 21" },
-  { icon: EmailIcon, text: "mntavr@mail.ru" },
+export const ABOUT_CONTACTS: {
+  icon: FC<IconProps>;
+  textKey: keyof Dictionary["footer"]["contacts"];
+}[] = [
+  { icon: HouseIcon, textKey: "address" },
+  { icon: PhoneIcon, textKey: "phone" },
+  { icon: EmailIcon, textKey: "email" },
 ];

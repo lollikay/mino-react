@@ -1,24 +1,25 @@
-import { MenuItem } from "@/types/menu-item";
+import { Dictionary } from "@/src/dictionaries";
+import { KeyedMenuItem } from "@/types/menu-item";
 
-export const MENU: MenuItem[] = [
+export const MENU: KeyedMenuItem<keyof Dictionary["header"]["nav"]>[] = [
   {
     url: '/about',
-    title: 'О салоне',
+    titleKey: 'about',
   },
   {
     url: '/news',
-    title: 'Новости',
+    titleKey: 'news',
   },
   {
     url: '/category',
-    title: 'Каталог',
+    titleKey: 'catalog',
   },
   {
     url: '/dostavka-i-oplata',
-    title: 'Доставка и оплата',
+    titleKey: 'delivery',
   },
   {
     url: '/contact',
-    title: 'Контакты',
+    titleKey: 'contact',
   },
 ]
