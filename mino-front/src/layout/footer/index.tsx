@@ -23,7 +23,7 @@ export const Footer = async () => {
     <>
       <CustomHr className="my-5" />
       <Container>
-        <nav className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-sm mb-5">
+        <nav className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-sm mb-5">
           {menus.map((menu, index) => (
             <FooterMenu
               key={index}

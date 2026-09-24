@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { IconProps } from "../../../types/icon-props";
+import { IconProps } from "@/types/icon-props";
 
 export const PhoneIcon: FC<IconProps> = ({ className, width, height }) => (
   <svg
